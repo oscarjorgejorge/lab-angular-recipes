@@ -33,9 +33,16 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
       dish.save( (err) => {
         if (err) { return res.status(500).json(err) }
 
-        return res.status(200).json(dish)
+        Ingredient.findById(id, (err, ingredient) => {
+          if (err) { return res.status(500).json(err) }
+
+          const lastIndex = dish.ingredients.length - 1;
+          dish.ingredients[lastIndex].ingredientId = ingredient;
+
+          return res.status(200).json(dish);
+        });
       });
-    })
+    });
 });
 
 module.exports = router;

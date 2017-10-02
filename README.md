@@ -71,16 +71,16 @@ Create a function in the single dish component. When someone clicks the "add" bu
 
 The request should be done inside of your dish service.
 
-The API endpoint is a POST to `'/dishes/:dishId/ingredients/:id/add'`. It also takes in a parameter for `quantity` in the body, which is a number.
+The API endpoint is a POST to `'/api/dishes/:dishId/ingredients/:id/add'`. It also takes in a parameter for `quantity` in the body, which is a number.
 
-Add a list of a dish's ingredients to the single dish component. Upon successfully adding the ingredient to the dish, display the ingredient in the list. A dish's ingredients are formatted in the following manner:
+Add a list of a dish's ingredients to the single dish component. Upon successfully adding the ingredient to the dish, display the ingredient in the list. A dish's ingredients are sent from the API in the following manner:
 
 ```
 dish = {
   // ...
   ingredients: [
     {
-      ingredient: { name: "Olive Oil" },
+      ingredientId: { name: "Olive Oil" },
       quantity: 1
     },
   ]
@@ -89,6 +89,6 @@ dish = {
 
 ### Bonus | Creating New Ingredients & Dishes
 
-Create a new route for adding new dishes. Add a link in the home page to display a form. This form will make a POST request to `/dishes` with a `name`, `image`, and `description`.
+Create a new route for adding new dishes. Add a link in the home page to display a form. This form will make a POST request to `/api/dishes` with a `name`, `image`, and `description`.
 
-In addition, create a route on the home page to display a form to create a new ingredient. The route is a POST to `/ingredients`, and takes a `name` in the body.
+In addition, create a route on the home page to display a form to create a new ingredient. The route is a POST to `/api/ingredients`, and takes a `name` in the body.
