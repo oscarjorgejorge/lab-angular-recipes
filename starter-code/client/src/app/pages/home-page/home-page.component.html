@@ -1,0 +1,9 @@
+<h1>Restaurants</h1>
+<div class="loading" *ngIf="!dishes">loading the dishes</div>
+
+<ul *ngIf="dishes">
+  <li *ngFor="let dish of dishes">
+      <app-dishes-list [dish]="dish"></app-dishes-list>
+
+  </li>
+</ul>
