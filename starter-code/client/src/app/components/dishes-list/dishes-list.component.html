@@ -2,4 +2,5 @@
   <p>{{dish.name}}</p>
   <img src="{{dish.image}}">
   <p>{{dish.description}}</p>
+  <a [routerLink]="['/single-dish', dish._id]">Details</a>
 </div>

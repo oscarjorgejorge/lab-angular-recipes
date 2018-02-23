@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DishesListComponent implements OnInit {
 
-  @Input() dish: Array<any>;
+  @Input() dish: Object;
 
   constructor() { }
 

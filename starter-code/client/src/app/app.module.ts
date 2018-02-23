@@ -10,9 +10,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DishesListComponent } from './components/dishes-list/dishes-list.component';
 
 import { DishesService } from './services/dishes.service';
+import { SingleDishComponent } from 'app/components/single-dish/single-dish.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent }
+  { path: '', component: HomePageComponent },
+  { path: 'single-dish/:id', component: SingleDishComponent}
 ];
 
 @NgModule({
@@ -20,6 +22,7 @@ const routes: Routes = [
     AppComponent,
     HomePageComponent,
     DishesListComponent,
+    SingleDishComponent
   ],
   imports: [
     BrowserModule,
